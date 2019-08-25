@@ -9,7 +9,7 @@ def main():
     print("response code : {0}".format(result.status))
 
     print("Headers: -----------")
-    print(result.getheaders())
+    #print(result.getheaders())
 
     print("Returned Data: -------------------")
     print(result.read().decode("utf-8"))
