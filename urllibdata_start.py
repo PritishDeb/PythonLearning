@@ -3,14 +3,20 @@ import urllib.parse
 
 
 def main():
-    url = "http://httpbin.org/get"
+    #url = "http://httpbin.org/get"
     args = {"name": "Pritish Debnath",
             "Profession": "Technology Consultant"}
 
     print("Hello There")
-    print("Accessing : ", url)
+    #print("Accessing : ", url)
+    #Using Get
     data = urllib.parse.urlencode(args)
-    result = urllib.request.urlopen(url + "?" + data)
+    #result = urllib.request.urlopen(url + "?" + data)
+
+    #using Post
+    url = "http://httpbin.org/post"
+    data = data.encode()
+    result = urllib.request.urlopen(url, data=data)
     print("response code : {0}".format(result.status))
     print("Headers: -----------")
     print(result.getheaders())
